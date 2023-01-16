@@ -877,6 +877,57 @@
   }
 }
 
+.top {
+  height: 130px;
+  background-color: #edf1f4;
+
+  &__title {
+    margin-top: 0;
+    padding-top: 30px;
+    @extend %rubik-light
+  }
+}
+
+.breadcrumbs {
+
+
+  &__list {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__link {
+    @extend %rubik-regular;
+    color: #9ca1a7;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__item:not(last-child) {
+    padding-right: 20px;
+    position: relative;
+
+
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 7px;
+      height: 13px;
+      top: 5px;
+      left: -14px;
+      opacity: 0.6;
+      background-image: url(../images/slash.png);
+    }
+
+    &:first-child {
+      &::after {
+        display: none;
+      }
+    }
+  }
+}
+
 
 
 @import 'media';
